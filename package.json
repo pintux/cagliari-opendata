@@ -1,13 +1,13 @@
 {
   "name": "cagliari-opendata",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Cagliari Open Data SDK",
   "homepage":"https://github.com/pintux/cagliari-opendata",
   "main": "index.js",
   "scripts": {
     "test": "mocha -t 5000"
   },
-  "author": " Antonio Pintus  - Paraimpu srl",
+  "author": " Antonio Pintus",
   "license": "MIT",
   "dependencies": {
     "async": "1.5.2",
