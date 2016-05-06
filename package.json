@@ -13,7 +13,6 @@
     "async": "1.5.2",
     "dateformat": "1.0.12",
     "debug": "latest",
-    "later": "1.2.0",
     "lodash": "4.6.1",
     "request": "2.69.0"
   },
