@@ -1,6 +1,6 @@
 {
   "name": "cagliari-opendata",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Cagliari Open Data SDK",
   "homepage":"https://github.com/pintux/cagliari-opendata",
   "main": "index.js",

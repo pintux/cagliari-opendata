@@ -92,7 +92,7 @@ A JSON is returned.
 Links
 -----
 
-- [Cagliari Open Data Hub](http://www.comune.cagliari.it/portale/it/api_rest.page)
+- [Cagliari Open Data Portal](http://opendata.comune.cagliari.it/portale)
 
 Contributors
 ------------
