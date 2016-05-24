@@ -49,6 +49,32 @@ All functions are asynchronous, thus a `callback(err, data)` is *mandatory* as t
 * <a href="#getStationData"><code>traffic.<b>getStationData</b></code></a>
 * <a href="#getSensorData"><code>traffic.<b>getSensorData()</b></code></a>
 
+All functions are asynchronous, thus a `callback(err, data)` is *mandatory* as the last parameter in a call.
+
+
+
+Data Description
+----------------
+JSON representations returned by API calls contain the following data items. See descriptions for details.
+
+JSON field | Descrizione (Italian) | Description (English) |
+------------ | ------------- | ------------- |
+tipoApparato | 2 == Postazione con un sensore per ogni senso di marcia; 4 == Postazione con due spire | 2 == Station with a sensor per direction; 4 == Station with two loops |
+classe: "Totali" | Totale di tutte le classi | Overall value of all classes |
+classe: "X - Y m" | Lunghezza del veicolo da X metri a Y metri | Vehicle length from X to Y meters |
+classe: "Oltre m" | Lunghezza del veivolo superiore a 22 metri | Vehicle length exceeding 22 meters |
+tipoClassificazione | 0 == Flusso e velocità; 1 == Solo Flusso| 0 == Flow and Speed; 1 == Flow, only  |
+efficienza | 100 == Dati flusso e velocità; 0 == Dati di solo flusso | 100 == Flow and Speed data; 0 == Flow, only |
+velocita | Velocità in Km/h | Speed in Km/h |
+flusso | Veicoli per ora | Vehicles per hour |
+tasso | Percentuale (%) | Percentage (%) |
+
+
+ 
+
+
+
+
 ----------------------------------------------------------
 <a name="getStations"></a>
 ### getStations(cb)
@@ -99,13 +125,13 @@ Contributors
 
 <table><tbody>
 <tr><th align="left">Antonio Pintus</th><td><a href="https://github.com/pintux">GitHub/pintux</a></td><td><a href="https://twitter.com/apintux">Twitter/@apintux</a></td></tr>
-
+<tr><th align="left">Cristian Lai</th><td><a href="https://github.com/cristianlai">GitHub/cristianlai</a></td><td><a href="https://twitter.com/crlai">Twitter/@crlai</a></td></tr>
 </tbody></table>
 
 
 License - "MIT License"
 -----------------------
-Copyright (c) 2016 Antonio Pintus, http://www.pintux.it
+Copyright (c) 2016 Antonio Pintus (http://www.pintux.it), Cristian Lai
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
