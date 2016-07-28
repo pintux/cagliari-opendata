@@ -1,20 +1,20 @@
 {
   "name": "cagliari-opendata",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "description": "Cagliari Open Data SDK",
   "homepage":"https://github.com/pintux/cagliari-opendata",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -t 5000"
+    "test": "DEBUG=lib:traffic mocha -t 5000"
   },
   "author": " Antonio Pintus",
   "license": "MIT",
   "dependencies": {
-    "async": "1.5.2",
+    "async": "2.0.1",
     "dateformat": "1.0.12",
     "debug": "latest",
-    "lodash": "4.6.1",
-    "request": "2.69.0"
+    "lodash": "4.14.0",
+    "request": "2.74.0"
   },
   "devDependencies": {
     "mocha": "latest",

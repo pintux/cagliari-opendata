@@ -7,11 +7,19 @@ About
 -----
 
 
-Basic node.js libraries to use Cagliari Open Data API endpoints.
+Basic Node.js libraries to use Cagliari Open Data API endpoints.
+
+**WARNING**: current version has been updated to use [ECMAscript 6 Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and it's not backward compatible with previous versions.
+If you prefer continuing to use callbacks, please use **[version 0.2.5](https://github.com/pintux/cagliari-opendata/releases/tag/v0.2.5)**
 
 
-Supported Datasets and Endpoints
---------------------------------
+Requirements
+------------
+Node.js  **> v6.3.x**
+
+
+Supported Datasets and API Endpoints
+------------------------------------
 
 - Traffic
 
@@ -26,36 +34,34 @@ Basic Example
 Getting all installed traffic monitoring stations:
 
 ```js
-var opendata = require('cagliari-opendata');
-var traffic = opendata.traffic;
+const opendata = require('cagliari-opendata');
+const traffic = opendata.traffic;
 
-traffic.getStations(function(err, stations){
-
+traffic.getStations()
+.then(stations => {
         if(!err){
-                    console.log(stations);
+           console.log(stations);
         }
-
 });
 ```
 
 API
 ---
 
-All functions are asynchronous, thus a `callback(err, data)` is *mandatory* as the last parameter in a call.
+All functions are asynchronous and they **return a Promise**.
 
 
 * <a href="#getStations"><code>traffic.<b>getStations()</b></code></a>
 * <a href="#getStation"><code>traffic.<b>getStation()</b></code></a>
-* <a href="#getStationData"><code>traffic.<b>getStationData</b></code></a>
+* <a href="#getStationData"><code>traffic.<b>getStationData()</b></code></a>
 * <a href="#getSensorData"><code>traffic.<b>getSensorData()</b></code></a>
 
-All functions are asynchronous, thus a `callback(err, data)` is *mandatory* as the last parameter in a call.
 
 
 
 Data Description
 ----------------
-JSON representations returned by API calls contain the following data items. See descriptions for details.
+JSON representations returned by API calls contain the following data items. JSON is the only supported format. See descriptions for details.
 
 JSON field | Descrizione (Italian) | Description (English) |
 ------------ | ------------- | ------------- |
@@ -77,42 +83,47 @@ tasso | Percentuale (%) | Percentage (%) |
 
 ----------------------------------------------------------
 <a name="getStations"></a>
-### getStations(cb)
+### getStations()
 
 Gets all available traffic stations installed in the city.
 
 A JSON is returned.
 
+
+
 -----------------------------------------------------------
 <a name="getStation"></a>
-### getStation(id, cb)
+### getStation(id)
 Gets info about a particular station given its `id`.
 
 A JSON is returned.
 
 - `id` is the numeric or String id of the station
 
+
 -----------------------------------------------------------
 <a name="getStationData"></a>
-### getStationData(id, startDate, endDate, cb)
+### getStationData(id, startDate, endDate)
 Gets measurement data from all the sensors in a station, given its `id`.
 
 A JSON is returned.
 
 - `id` is the numeric or string id of the station
-- `startDate` a Date representing the start date/time for required measurements (mandatory)
-- `endDate` a Date representing the end date/time for required measurements (optional)
+- `startDate` a Date object representing the start date/time for required measurements (mandatory)
+- `endDate` a Date object representing the end date/time for required measurements (optional, use `null` to skip)
+
 
 ------------------------------------------------------------
 <a name="getSensorData"></a>
-### getSensorData(id, startDate, endDate, cb)
+### getSensorData(id, startDate, endDate)
 Gets measurement data from for a specific sensor, given its `id`.
 
 A JSON is returned.
 
 - `id` is the numeric or string id of the sensor
-- `startDate` a Date representing the start date/time for required measurements (mandatory)
-- `endDate` a Date representing the end date/time for required measurements (optional)
+- `startDate` a Date object representing the start date/time for required measurements (mandatory)
+- `endDate` a Date object representing the end date/time for required measurements (optional, use `null` to skip)
+
 
 
 Links
