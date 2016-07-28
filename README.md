@@ -38,10 +38,8 @@ const opendata = require('cagliari-opendata');
 const traffic = opendata.traffic;
 
 traffic.getStations()
-.then(stations => {
-        if(!err){
-           console.log(stations);
-        }
+.then(stations => { 
+       console.log(stations);        
 });
 ```
 
